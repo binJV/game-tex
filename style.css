@@ -1,0 +1,239 @@
+/* General Page Styling to match the academic aesthetic */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* LaTeX Logo Simulation */
+.latex {
+    font-family: "Times New Roman", serif;
+}
+.latex sub {
+    vertical-align: -0.5ex;
+    margin-left: -0.1667em;
+    margin-right: -0.125em;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+.latex sup {
+    font-size: 0.85em;
+    vertical-align: 0.15em;
+    margin-left: -0.36em;
+    margin-right: -0.15em;
+    text-transform: uppercase;
+}
+
+/* Controls (Buttons, Score, Time) */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    background: white;
+    border: 2px solid black;
+    padding: 10px 15px;
+    font-family: "Times New Roman", serif;
+    font-size: 1rem;
+    cursor: pointer;
+    color: black;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Problem Headings */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.instruction, .label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+
+/* The Math Boxes (Target and Preview) */
+.math-box {
+    border: 2px solid black;
+    padding: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem; /* Scales the math up slightly */
+    background-color: white;
+}
+
+.output-box {
+    min-height: 100px; /* Output box slightly taller to match screenshot whitespace */
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* Styling to match the image */
+  background-color: white;
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 15px 20px;
+  font-family: "Georgia", "Times New Roman", serif; /* Matches the serif style */
+  color: #000;
+  
+  /* Fixed size */
+  width: 600px;
+  height: 20px;
+}
+
+.rank {
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 60px; /* Fixed width ensures names align vertically if you stack rows */
+  font-style: italic; /* The '#' usually leans slightly in these fonts */
+}
+
+.username {
+  flex-grow: 1; /* Takes up remaining space */
+  font-size: 1rem;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 1rem;
+}
+/* The Black Editor Box */
+textarea {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    padding: 15px;
+    box-sizing: border-box;
+    border: none;
+    border-left: 3px solid #007bff; /* The blue accent line */
+    outline: none;
+    resize: vertical;
+}
+
+textarea::placeholder {
+    color: #555;
+}
+
+/* --- MAIN MENU STYLES --- */
+.btn-container { margin: 40px 0; }
+
+.play-btn {
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.play-btn:hover {
+    background-color: #f0f0f0;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+.hints-section { 
+    text-align: left; 
+    margin-top: 20px; 
+    display: inline-block; 
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.hints-title { 
+    font-weight: bold; 
+    font-size: 1.1rem; 
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+ul { list-style-type: disc; padding-left: 20px; }
+li { margin-bottom: 8px; }
+code { font-family: "Courier New", Courier, monospace; font-weight: bold; font-size: 1.05em; }
+a.link { color: #6a1b9a; text-decoration: underline; }
+a.link:hover { text-decoration: none; }
+
+/* Hide all screens by default */
+#main-menu, #game-ui, #game-over-ui {
+    display: none;
+}
+
+/* Show main menu by default */
+#main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    max-width: 700px;
+    text-align: center;
+}
+
+#main-menu h1 {
+    font-size: 2.5rem;
+}
+
+/* --- GAME OVER STYLES --- */
+#game-over-ui {
+    flex-direction: column;
+    align-items: center;
+}
+
+h2.game-over-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; margin-top: 0; }
+p.score-text { font-size: 1.2rem; margin-bottom: 40px; }
+
+.submit-section { display: flex; gap: 20px; justify-content: center; margin-bottom: 40px; }
+.name-input { width: 250px; font-family: "Times New Roman", serif; font-size: 1.1rem; padding: 10px; }
+
+.leaderboard-section { margin-bottom: 40px; width: 100%; }
+.leaderboard-title { display: none; }
+.leaderboard-content { display: flex; flex-direction: column; align-items: center; }
+.tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+.tabs button { padding: 8px 20px; font-family: "Times New Roman", serif; }
+
+.play-again-btn { padding: 12px 30px; font-size: 1.2rem; margin-top: 20px; cursor: pointer; }
+
+/* Badges for Difficulty */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold; color: white; margin-left: 10px; font-family: Arial; vertical-align: middle; }
+.difficulty-1 { background-color: #28a745; }
+.difficulty-3 { background-color: #ffc107; color: black; }
+.difficulty-5 { background-color: #dc3545; }

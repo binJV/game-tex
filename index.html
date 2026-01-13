@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Typesetting Game</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+    window.MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+        typeset: false // We will handle typesetting manually in the JS
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div id="main-menu" class="container">
+        <h1>A <span class="latex">L<sub>A</sub>T<sup>E</sup>X</span> Typesetting Game</h1>
+
+        <p>This is a game to test your <span class="latex">L<sub>A</sub>T<sup>E</sup>X</span> skills.</p>
+
+        <p>Type as many formulas as you can in 3 minutes!</p>
+
+        <div class="btn-container">
+            <button id="btn-start">Play Game</button>
+        </div>
+
+        <div class="hints-section">
+            <span class="hints-title">Hints:</span>
+            <ul>
+                <li>No <code>$</code> signs needed</li>
+                <li>All formulas are rendered in display style</li>
+                <li>Use <code>\left</code> and <code>\right</code> to correctly size balanced delimiters like <code>(</code>, <code>{</code>, and <code>\lceil</code></li>
+                <li>Prefer <code>\bmod</code> and <code>\pmod</code> to <code>\mod</code></li>
+                <li>Use <code>\mathbf</code>, not <code>\textbf</code></li>
+                <li>Harder problems are worth more points</li>
+                <li>Use <a href="https://detexify.kirelabs.org/classify.html" class="link">Detexify</a> to quickly look up unknown symbols</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="game-ui" class="container">
+        <h1>A <span class="latex">L<sub>A</sub>T<sup>E</sup>X</span> Typesetting Game</h1>
+
+        <div class="controls">
+            <div class="button-group">
+                <button id="skip-btn">Skip This Problem</button>
+                <button id="btn-end">End Game</button>
+            </div>
+            <div class="score">Score: 0</div>
+            <div class="time">Time: <span id="time-display">180</span>s</div>
+        </div>
+
+        <div class="problem-section">
+            <h2></h2>
+            
+            <p class="instruction">Try to create the following formula:</p>
+            <div id="target-box" class="math-box"></div>
+
+            <p class="label">This is what your output looks like:</p>
+            <div id="preview-box" class="math-box output-box"></div>
+
+            <p class="label">Edit your code here:</p>
+            <textarea id="code-input" placeholder="Type LaTeX here..." spellcheck="false"></textarea>
+        </div>
+    </div>
+
+    <div id="game-over-ui" class="container">
+        <h1>A <span class="latex">L<sub>A</sub>T<sup>E</sup>X</span> Typesetting Game</h1>
+
+        <h2 class="game-over-title">Game Over!</h2>
+        
+        <p class="score-text">
+            You finished <span id="final-problems">0</span> problems for a total score of <span id="final-score">0</span>
+        </p>
+
+        <div class="submit-section">
+            <input type="text" class="name-input" placeholder="Enter your name">
+            <button>Submit Score</button>
+        </div>
+
+        <div class="leaderboard-section">
+            <h3 class="leaderboard-title">Leaderboard</h3>
+            <div class="leaderboard-content">No scores yet!</div>
+        </div>
+
+        <button id="btn-play-again">Play Again</button>
+    </div>
+    <script src="problems.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
